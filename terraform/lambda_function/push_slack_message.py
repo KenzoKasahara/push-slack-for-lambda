@@ -128,10 +128,9 @@ def lambda_handler(event, context):
                 cnt += 1
                 rate_limit_delay = check_rate_limit(rate_limit_delay)
                 respose_code = send_to_slack(message_id, message, rate_limit_delay)
-
-                # print(str(cnt) + '個目')
-                # print('rate_limit_delay: ', rate_limit_delay)
-                # print('respose_code: ', respose_code)
+                print(str(cnt) + '個目')
+                print('rate_limit_delay: ', rate_limit_delay)
+                print('respose_code: ', respose_code)
 
                 record_request(message_id)  # DynamoDBへのレコード書き込み
 
